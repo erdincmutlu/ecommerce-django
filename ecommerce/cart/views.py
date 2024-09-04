@@ -6,7 +6,8 @@ from django.shortcuts import get_object_or_404
 
 
 def cart_summary(request):
-    return render(request, "cart/cart-summary.html")
+    cart = Cart(request)
+    return render(request, "cart/cart-summary.html", {"cart": cart})
 
 
 def cart_add(request):
