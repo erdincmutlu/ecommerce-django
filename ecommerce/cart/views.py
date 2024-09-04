@@ -20,12 +20,8 @@ def cart_add(request):
 
     cart.add(product=product, product_qty=product_quantity)
 
-    response = JsonResponse(
-        {
-            "The product is called: ": product.title,
-            "and the product quantity is: ": product_quantity,
-        }
-    )
+    card_quantity = cart.__len__()
+    response = JsonResponse({"qty": card_quantity})
     return response
 
 
